@@ -4,7 +4,7 @@ import Head from "next/head";
 import { AppContext } from "../store/store";
 import { Header, Favourites, NewsFeed } from "../components/organisms";
 import { colors, device } from "../theme";
-import { Divider } from "../components/atoms/divider";
+import { Divider } from "../components/atoms/Divider";
 
 const useStyles = createUseStyles(() => ({
   newsWrapper: {
@@ -60,7 +60,7 @@ export default function Home() {
         <aside className={classes.sidebar}>
           <Divider color={colors.red} marginBottom={4} />
           <Divider color={colors.red200} marginBottom={4} />
-          <Divider color={colors.red200} />
+          <Divider color={colors.red200} marginBottom={16} />
           <Favourites items={favourites} />
         </aside>
 
