@@ -5,7 +5,7 @@ const useStyles = createUseStyles((coverStyle) => ({
   imageWrapper: {
     display: "flex",
     width: "100%",
-    height: "auto",
+    height: "inherit",
   },
 
   image: {

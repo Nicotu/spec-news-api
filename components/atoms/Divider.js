@@ -3,7 +3,7 @@ import { createUseStyles } from "react-jss";
 
 const useStyles = createUseStyles(() => ({
   divider: {
-    height: 2,
+    height: (props) => props.size || 2,
     display: "block",
     width: "100%",
     backgroundColor: (props) => props.color || "black",
@@ -12,8 +12,8 @@ const useStyles = createUseStyles(() => ({
   },
 }));
 
-export const Divider = ({ color, marginBottom, marginTop }) => {
-  const classes = useStyles({ color, marginBottom, marginTop });
+export const Divider = ({ color, marginBottom, marginTop, size }) => {
+  const classes = useStyles({ color, marginBottom, marginTop, size });
 
   return <span className={classes.divider}></span>;
 };

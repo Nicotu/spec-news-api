@@ -10,7 +10,8 @@ const useStyles = createUseStyles(() => ({
     width: "100%",
 
     "& article": {
-      minWidth: "50%",
+      width: "50%",
+      marginRight: 32,
     },
   },
 

@@ -2,9 +2,9 @@ import { useContext } from "react";
 import { createUseStyles } from "react-jss";
 import Head from "next/head";
 import { AppContext } from "../store/store";
+import { Divider } from "../components/atoms/";
 import { Header, Favourites, NewsFeed } from "../components/organisms";
 import { colors, device } from "../theme";
-import { Divider } from "../components/atoms/Divider";
 
 const useStyles = createUseStyles(() => ({
   newsWrapper: {
@@ -58,9 +58,9 @@ export default function Home() {
 
       <main className={classes.newsWrapper}>
         <aside className={classes.sidebar}>
-          <Divider color={colors.red} marginBottom={4} />
-          <Divider color={colors.red200} marginBottom={4} />
-          <Divider color={colors.red200} marginBottom={16} />
+          <Divider color={colors.red} marginBottom={4} size={2} />
+          <Divider color={colors.red200} marginBottom={4} size={2} />
+          <Divider color={colors.red200} marginBottom={16} size={2} />
           <Favourites items={favourites} />
         </aside>
 

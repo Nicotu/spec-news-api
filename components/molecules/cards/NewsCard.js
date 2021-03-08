@@ -2,7 +2,7 @@ import React, { useContext } from "react";
 import { createUseStyles } from "react-jss";
 import { Cta } from "../Cta";
 import { colors } from "../../../theme";
-import { Text, Image, RemoveCta } from "../../atoms";
+import { Text, Image, RemoveCta, Divider } from "../../atoms";
 import { AppContext } from "../../../store/store";
 
 const useStyles = createUseStyles(() => ({
@@ -15,6 +15,12 @@ const useStyles = createUseStyles(() => ({
       marginTop: "auto",
       marginBottom: 18.5,
     },
+
+    "& img": {
+      width: "100%",
+      objectFit: "cover",
+      objectPosition: "center",
+    },
   },
 
   heading: {},
@@ -22,6 +28,7 @@ const useStyles = createUseStyles(() => ({
   imageWrapper: {
     height: 150,
     overflow: "hidden",
+    position: "relative",
   },
 
   textWrapper: {
@@ -46,6 +53,18 @@ const useStyles = createUseStyles(() => ({
     position: "absolute",
     right: 0,
     top: 0,
+  },
+
+  placeholder: {
+    backgroundColor: colors.gray50,
+    position: "absolute",
+    width: "100%",
+    height: "100%",
+    display: "flex",
+    alignItems: "center",
+    justifyContent: "center",
+    fontSize: 16,
+    color: colors.gray600,
   },
 }));
 
@@ -109,11 +128,21 @@ export const NewsCard = ({
         ></Cta>
       )}
 
-      {urlToImage && (
+      {!slim && (
         <div className={classes.imageWrapper}>
-          <Image url={urlToImage} cover />
+          {urlToImage && <Image url={urlToImage} cover />}
+          {!urlToImage && (
+            <span className={classes.placeholder}>No image avalailable</span>
+          )}
         </div>
       )}
+
+      <Divider
+        color={colors.gray100}
+        marginTop={16}
+        marginBottom={16}
+        size={1}
+      />
     </article>
   );
 };

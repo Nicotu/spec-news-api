@@ -1,5 +1,5 @@
 import React from "react";
-import { Logo } from "../atoms/Logo";
+import { Logo } from "../atoms";
 import { colors } from "../../theme";
 import { createUseStyles } from "react-jss";
 
